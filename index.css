@@ -1,0 +1,137 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --base-font-scale: 1rem;
+}
+
+/* Font Size Scaling */
+html.font-size-normal {
+  font-size: 18px;
+}
+
+html.font-size-large {
+  font-size: 22px;
+}
+
+html.font-size-xlarge {
+  font-size: 26px;
+}
+
+/* Base Body Styles */
+body {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+  letter-spacing: 0.02em;
+  line-height: 1.6;
+}
+
+/* Accessibility Focus States */
+*:focus-visible {
+  outline: 4px solid #2563EB !important;
+  outline-offset: 3px !important;
+}
+
+/* High Contrast Mode Overrides */
+html.high-contrast {
+  background-color: #000000 !important;
+  color: #FFFFFF !important;
+}
+
+html.high-contrast body {
+  background-color: #000000 !important;
+  color: #FFFFFF !important;
+}
+
+html.high-contrast *:focus-visible {
+  outline: 4px solid #FFFF00 !important;
+  outline-offset: 4px !important;
+}
+
+html.high-contrast .card-theme {
+  background-color: #0A0A0A !important;
+  color: #FFFFFF !important;
+  border: 3px solid #FFFF00 !important;
+}
+
+html.high-contrast .input-theme {
+  background-color: #000000 !important;
+  color: #FFFFFF !important;
+  border: 3px solid #FFFF00 !important;
+}
+
+html.high-contrast .input-theme::placeholder {
+  color: #CBD5E1 !important;
+}
+
+html.high-contrast .btn-primary {
+  background-color: #FFFF00 !important;
+  color: #000000 !important;
+  border: 3px solid #FFFFFF !important;
+  font-weight: 800 !important;
+}
+
+html.high-contrast .btn-primary:hover {
+  background-color: #FFE600 !important;
+}
+
+html.high-contrast .btn-secondary {
+  background-color: #000000 !important;
+  color: #FFFFFF !important;
+  border: 3px solid #FFFFFF !important;
+  font-weight: 700 !important;
+}
+
+html.high-contrast .btn-secondary:hover {
+  background-color: #222222 !important;
+}
+
+html.high-contrast .btn-accent {
+  background-color: #00E5FF !important;
+  color: #000000 !important;
+  border: 3px solid #FFFFFF !important;
+  font-weight: 800 !important;
+}
+
+html.high-contrast .badge-theme {
+  background-color: #1E1E1E !important;
+  color: #FFFF00 !important;
+  border: 2px solid #FFFF00 !important;
+}
+
+/* Smooth pulse animation for microphone */
+@keyframes soft-pulse {
+  0%, 100% {
+    transform: scale(1);
+    box-shadow: 0 0 0 0 rgba(239, 68, 68, 0.7);
+  }
+  50% {
+    transform: scale(1.05);
+    box-shadow: 0 0 0 15px rgba(239, 68, 68, 0);
+  }
+}
+
+.listening-pulse {
+  animation: soft-pulse 1.8s infinite;
+}
+
+/* Print Styles for Export */
+@media print {
+  body {
+    background: white !important;
+    color: black !important;
+  }
+  .no-print {
+    display: none !important;
+  }
+  .print-only {
+    display: block !important;
+  }
+  .print-container {
+    border: 2px solid #000 !important;
+    padding: 24px !important;
+    margin: 0 !important;
+    box-shadow: none !important;
+    page-break-inside: avoid;
+  }
+}
